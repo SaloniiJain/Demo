@@ -1,0 +1,22 @@
+<div
+  style="
+    border: solid 1px black;
+    margin: 15px 0px;
+    padding: 15px;
+    background: wheat;
+  "
+>
+  <h3>Child Component</h3>
+  <br />
+  First Name: {{ firstName | uppercase }}
+  <br />
+  Last Name: {{ lastName }}
+  <br />
+  Siblings: <span *ngFor="let sibling of siblings"> {{ sibling }} , </span>
+  <br />
+
+  <button (click)="clickButton()" style="margin-top: 20px" [disabled]="clicked">
+    Click Me
+  </button>
+  <span *ngIf="clicked"> We have used disabled button based on condition</span>
+</div>

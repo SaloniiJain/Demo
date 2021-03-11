@@ -1,0 +1,33 @@
+<nav class="menu" style="background-color: cadetblue; height: 30px; border-radius: 10px; margin: 10px;">
+  <ul>
+    <a routerLink="child">Child</a>&nbsp;
+    <a routerLink="admin">Admin</a>&nbsp;
+    <a routerLink="About">About</a>&nbsp;
+  </ul>
+</nav>
+
+<div style="border: solid 1px black; padding: 15px">
+  <h3>{{ componentName }} Component</h3>
+  <span><b>Value emitted from child component is:</b></span>
+  {{ valueEmittedFromChildComponent }}
+  <app-child
+    [firstName]="firstName"
+    [lastName]="lastName"
+    [siblings]="siblings"
+    (buttonClicked)="parentEventHandlerFunction($event)"
+  ></app-child>
+  <h4>{{name}}</h4>
+
+  <h4>Using pipes</h4>
+  <span>
+    Original: {{ str }}, <br />
+    Using uppercase pipe: {{ str | uppercase }}, <br />
+    Using lowercase pipe: {{ str | lowercase }}
+
+    <br /><br />
+    Number: {{ num }}, <br />
+    Square using our custom pipe: {{ num | square }}
+  </span>
+</div>
+
+<router-outlet></router-outlet>
